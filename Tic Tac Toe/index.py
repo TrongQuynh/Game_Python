@@ -31,15 +31,19 @@ class CheckWin():
                 currentPosition += (this.n + 1);
             result.append(tmpArr)
         
+        # print(start_positions)
+        # print(result)
+        
         num = 0;
         for sub in result:
             num = 0
             for p in sub:
-                if num == 5: return True
                 if p in chooseList:
                     num += 1
+                    if num == 5: return True
+                    print(num)
                 else: num = 0
-        
+        print("\n ---")
         return False
 
 
@@ -71,8 +75,10 @@ class CheckWin():
         for sub in result:
             num = 0
             for p in sub:
-                if num == 5 : return True
-                if p in chooseList: num+=1   
+                
+                if p in chooseList: 
+                    num+=1   
+                    if num == 5 : return True
                 else: num = 0 
         return False
 
@@ -90,8 +96,10 @@ class CheckWin():
         for subList in result:
             num = 0;
             for p in subList:
-                if num == 5: return True;
-                if p in chooseList: num += 1
+                
+                if p in chooseList: 
+                    num += 1
+                    if num == 5: return True;
                 else: num = 0
         return False;
 
@@ -111,8 +119,10 @@ class CheckWin():
         for sub in result:
             num = 0;
             for p in sub:
-                if num == 5: return True;
-                if p in chooseList: num += 1
+                
+                if p in chooseList: 
+                    num += 1
+                    if num == 5: return True;
                 else: num =0
         return False
   
@@ -193,16 +203,13 @@ class myApp(QWidget):
                 this.groupButton.button(id).setText("O")
                     
                 this.botChoose.append(int(id));
-                result = this.check_Win(this.botChoose);
-                if result: this.showMessageDialog("Bot");
-            
+                # result = this.check_Win(this.botChoose);
+                # if result: this.showMessageDialog("Bot");
             
             this.ticked.append(id);
             this.isPlayer = not this.isPlayer;
         return runEvent;
 
-    def updateComponent(this, ):
-        this.label.adjustSize();
 
     def check_Win(this, listchoose):
         check = CheckWin(this.n);
