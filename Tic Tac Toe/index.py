@@ -164,7 +164,7 @@ class myApp(QWidget):
         this.lable.setFixedSize(500,50)
         
         index = 1;
-        this.n = 10;
+        this.n = 5;
         for x in range(this.n):
             for y in range(this.n):
                 button = QPushButton("");
@@ -203,8 +203,8 @@ class myApp(QWidget):
                 this.groupButton.button(id).setText("O")
                     
                 this.botChoose.append(int(id));
-                # result = this.check_Win(this.botChoose);
-                # if result: this.showMessageDialog("Bot");
+                result = this.check_Win(this.botChoose);
+                if result: this.showMessageDialog("Bot");
             
             this.ticked.append(id);
             this.isPlayer = not this.isPlayer;
